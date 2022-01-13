@@ -223,9 +223,13 @@ If you want to save it in bower.json file, remember to add flag --save
      *
      * @return {string} returns the trimmed version of paper-input value.
      */
-    _getInputVal: function () {
+     _getInputVal: function (keyVal) {
       var input = this.$$('#autoCompleteInput');
-      return input.text;
+      var text = input.text
+      if (keyVal == 188) {
+        text = text.substring(0, text.length - 1);
+      }
+      return text;
     },
 
     /**
@@ -235,10 +239,10 @@ If you want to save it in bower.json file, remember to add flag --save
      */
     _keyUp: function (e) {
       var keyVal = e.which;
-      var input = this.$$('#autoCompleteInput');
+      var input = this.$$('#autoCompleteInput');  
 
-      if (keyVal == 13) {
-        this._addTag(this._getInputVal());
+      if (keyVal == 13 || keyVal == 188) {
+        this._addTag(this._getInputVal(keyVal));
       }
     },
 
