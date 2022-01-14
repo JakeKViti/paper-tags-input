@@ -11,7 +11,12 @@ paper-tags-input is a list of tags with a single-line text field with Material D
 
 ## Installation
 
-	bower install --save paper-tags-input
+	bower install --save jakekviti/paper-tags-input -f
+
+To use my changes, you have to make sure that it is pointed to my commit in the bower.json
+
+	"paper-tags-input": "jakekviti/paper-tags-input#1d70ae2"
+	
 
 ## Dependencies
 
